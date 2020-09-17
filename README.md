@@ -17,7 +17,7 @@ Example 1:
 const NoDuplicates = require('no-duplicates');
 
 const fruits = ['🍎', '🍓', '🍉', '🍌'];
-const fruitSet = new NoDuplicates([fruits]);
+const fruitSet = new NoDuplicates(fruits);
 fruitSet.get(); // returns a random fruit
 ```
 
