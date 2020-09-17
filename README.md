@@ -2,13 +2,13 @@
 
 Get random elements from an array without duplicates. Will reset when all elements in the array have been used.
 
-#Installation
+# Installation
 
 ```
 npm install no-duplicates
 ```
 
-#Examples
+# Examples
 
 Example 1:
 
