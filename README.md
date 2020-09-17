@@ -1,6 +1,6 @@
 # no-duplicates
 
-Get random elements from an array without duplicates until all elements in the array have been used.
+Get random elements from an array without duplicates. Will reset when all elements in the array have been used.
 
 #Installation
 
@@ -13,7 +13,8 @@ npm install no-duplicates
 Example 1:
 
 ```javascript
-const NoDuplicates = require('./index');
+const NoDuplicates = require('no-duplicates');
+
 const fruits = ['🍎', '🍓', '🍉', '🍌'];
 const fruitSet = new NoDuplicates([fruits]);
 fruitSet.get(); // returns a random fruit
@@ -22,7 +23,7 @@ fruitSet.get(); // returns a random fruit
 Example 2:
 
 ```javascript
-const NoDuplicates = require('./index');
+const NoDuplicates = require('no-duplicates');
 
 const people = ['John Coltrane', 'Mary Lou Williams', 'Ornette Coleman', 'Nina Simone', 'Carla Bley', 'John Gilmore'];
 
@@ -44,7 +45,7 @@ Mary Lou Williams
 Example 3:
 
 ```javascript
-const NoDuplicates = require('./index');
+const NoDuplicates = require('no-duplicates');
 
 const numbers = [];
 for (let i = 1; i < 11; i++) {
@@ -62,112 +63,6 @@ for (let i = 0; i < 10; i++) {
 outputs...
 
 ```
-9
-6
-3
-2
-10
-8
-7
-5
-4
-1
-6
-3
-1
-8
-7
-2
-10
-4
-9
-5
-3
-6
-1
-8
-4
-10
-9
-7
-2
-5
-3
-5
-1
-8
-9
-10
-4
-7
-6
-2
-7
-2
-4
-6
-9
-10
-3
-5
-1
-8
-9
-5
-7
-4
-10
-6
-8
-1
-2
-3
-8
-3
-10
-4
-1
-9
-6
-5
-7
-2
-10
-5
-9
-4
-6
-7
-1
-2
-8
-3
-5
-9
-4
-6
-3
-2
-7
-10
-8
-1
-4
-6
-1
-3
-9
-8
-10
-2
-5
-7
-Joshuas-MacBook-Pro:no-duplicates joshuahume$ node index.js
-Joshuas-MacBook-Pro:no-duplicates joshuahume$ node example.js
-[
-  1, 2, 3, 4,  5,
-  6, 7, 8, 9, 10
-]
 4
 5
 10
