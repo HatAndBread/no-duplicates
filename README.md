@@ -1,6 +1,7 @@
 # no-duplicates
 
 Get random elements from an array without duplicates. Will reset when all elements in the array have been used.
+A very useful function for game development and any other application that may require randomized sets.
 
 # Installation
 
