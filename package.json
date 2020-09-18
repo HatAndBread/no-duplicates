@@ -1,6 +1,6 @@
 {
   "name": "no-duplicates",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "Get random elements from an array without duplicates until all elements in the array have been used.",
   "main": "index.js",
   "scripts": {
