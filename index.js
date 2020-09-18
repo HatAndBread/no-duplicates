@@ -5,13 +5,6 @@
 function NoDuplicates(arr) {
   this.arr = [...arr];
   this.tempArr = [];
-  this.shuffle = () => {
-    while (this.arr.length > 0) {
-      let num = Math.floor(Math.random() * this.arr.length);
-      this.tempArr.push(this.arr.splice(num, 1)[0]);
-    }
-  };
-  this.shuffle();
   /**
    * @returns - returns a random element from your array.
    */
@@ -21,7 +14,10 @@ function NoDuplicates(arr) {
       this.arr.push(newItem);
       return newItem;
     } else {
-      this.shuffle();
+      while (this.arr.length > 0) {
+        let num = Math.floor(Math.random() * this.arr.length);
+        this.tempArr.push(this.arr.splice(num, 1)[0]);
+      }
       let newItem = this.tempArr.splice(0, 1)[0];
       this.arr.push(newItem);
       return newItem;
