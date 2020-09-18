@@ -1,6 +1,6 @@
 # no-duplicates
 
-Get random elements from an array without duplicates in JavaScript. Will reset when all elements in the array have been used.
+Get random numbers or random elements from an array without duplicates in JavaScript. Will reset when all elements in the array or all numbers in the range have been used.
 A very useful function for game development and any other application that may require randomized sets.
 
 # Installation
@@ -9,59 +9,70 @@ A very useful function for game development and any other application that may r
 npm install no-duplicates
 ```
 
-# Examples
-
-Example 1:
-
 ```javascript
-const Nd = require('no-duplicates');
+const randumb = require('no-duplicates');
 
-const fruits = ['🍎', '🍓', '🍉', '🍌'];
-const fruitSet = new Nd(fruits);
-fruitSet.get(); // returns a random fruit
+const randomizedSafari = randumb(['🐘', '🦁', '🦓', '🦒']);
+randmoizedSafari();
+/* ********************************************
+ * will return a random animal without        *
+ * repeating until all animals have been used.*
+ ********************************************* */
+
+const nums = randumb(10);
+nums();
+/* **********************************************
+ * will return a random number between          *
+ * 0 and 10 (including 10) without repeating    *
+ * until all numbers in the range have been used*
+ ********************************************** */
+
+const between = randumb(5, 15);
+between();
+/* *********************************************
+ * will return a random number between 5 and 15*
+ * (including 5  & 15) without repeating until *
+ * all numbers in the range have been used     *
+ ********************************************* */
 ```
 
-Example 2:
+# Examples
 
 ```javascript
-const Nd = require('no-duplicates');
+const randumb = require('no-duplicates');
 
-const people = ['John Coltrane', 'Mary Lou Williams', 'Ornette Coleman', 'Nina Simone', 'Carla Bley', 'John Gilmore'];
+const fruit = ['🍎', '🍊', '🍉', '🍓', '🍇'];
 
-const randomPeople = new Nd(people);
-for (let i = 0; i < people.length; i++) {
-  console.log(randomPeople.get());
+const randomFruit = randumb(fruit);
+for (let i = 0; i < 10; i++) {
+  console.log(randomFruit());
 }
-
 /* Example output...
-Ornette Coleman
-Carla Bley
-John Gilmore
-Nina Simone
-John Coltrane
-Mary Lou Williams
+🍊
+🍓
+🍇
+🍉
+🍎
+🍉
+🍊
+🍎
+🍇
+🍓
 */
 ```
 
-Example 3:
-
 ```javascript
-const Nd = require('no-duplicates');
+const randumb = require('no-duplicates');
 
-const numbers = [];
-for (let i = 1; i < 11; i++) {
-  numbers.push(i);
-}
-
-const nums = new Nd(numbers);
+const nums = randumb(1, 10);
 for (let i = 0; i < 10; i++) {
   for (let j = 0; j < 11; j++) {
-    j < 10 ? console.log(nums.get()) : console.log('❤︎❤︎❤︎❤︎❤︎❤︎❤︎❤︎❤︎❤︎');
+    j < 10 ? console.log(nums()) : console.log('❤︎❤︎❤︎❤︎❤︎❤︎❤︎❤︎❤︎❤︎');
   }
 }
 ```
 
-outputs...
+example output...
 
 ```
 4

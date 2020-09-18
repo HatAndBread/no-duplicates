@@ -3,10 +3,7 @@ function returner(arr, arr2) {
   arr2.push(newItem);
   return newItem;
 }
-/**
- *
- * @param {array} arr - an array containing the elements you want to be randomized
- */
+
 function NoDuplicates(arr) {
   this.arr = [...arr];
   this.tempArr = [];
@@ -26,4 +23,43 @@ function NoDuplicates(arr) {
   };
 }
 
-module.exports = NoDuplicates;
+function randumb(...args) {
+  let theArgs = args;
+  if (typeof theArgs[0] === 'number' && theArgs.length === 1) {
+    const theArr = new Array(theArgs[0]);
+    let num = theArr.length + 1;
+    for (let i = 0; i < num; i++) {
+      theArr[i] = i;
+    }
+    const set = new NoDuplicates(theArr);
+    return function a() {
+      return set.get();
+    };
+  } else if (typeof theArgs[0] === 'number' && typeof theArgs[1] === 'number') {
+    function smallest() {
+      if (theArgs[0] <= theArgs[1]) {
+        return [theArgs[0], theArgs[1]];
+      } else {
+        return [theArgs[1], theArgs[0]];
+      }
+    }
+    const theArr = new Array(smallest()[1] - smallest()[0]);
+    let num = theArr.length + 1;
+    for (let i = 0; i < num; i++) {
+      theArr[i] = i + smallest()[0];
+    }
+    const set = new NoDuplicates(theArr);
+    return function a() {
+      return set.get();
+    };
+  } else if (Array.isArray(theArgs[0])) {
+    const set = new NoDuplicates(theArgs[0]);
+    return function a() {
+      return set.get();
+    };
+  } else {
+    console.error('Type error @randumb');
+  }
+}
+
+module.exports = randumb;
