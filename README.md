@@ -14,21 +14,21 @@ npm install no-duplicates
 Example 1:
 
 ```javascript
-const NoDuplicates = require('no-duplicates');
+const Nd = require('no-duplicates');
 
 const fruits = ['🍎', '🍓', '🍉', '🍌'];
-const fruitSet = new NoDuplicates(fruits);
+const fruitSet = new Nd(fruits);
 fruitSet.get(); // returns a random fruit
 ```
 
 Example 2:
 
 ```javascript
-const NoDuplicates = require('no-duplicates');
+const Nd = require('no-duplicates');
 
 const people = ['John Coltrane', 'Mary Lou Williams', 'Ornette Coleman', 'Nina Simone', 'Carla Bley', 'John Gilmore'];
 
-const randomPeople = new NoDuplicates(people);
+const randomPeople = new Nd(people);
 for (let i = 0; i < people.length; i++) {
   console.log(randomPeople.get());
 }
@@ -46,14 +46,14 @@ Mary Lou Williams
 Example 3:
 
 ```javascript
-const NoDuplicates = require('no-duplicates');
+const Nd = require('no-duplicates');
 
 const numbers = [];
 for (let i = 1; i < 11; i++) {
   numbers.push(i);
 }
 
-const nums = new NoDuplicates(numbers);
+const nums = new Nd(numbers);
 for (let i = 0; i < 10; i++) {
   for (let j = 0; j < 11; j++) {
     j < 10 ? console.log(nums.get()) : console.log('❤︎❤︎❤︎❤︎❤︎❤︎❤︎❤︎❤︎❤︎');
