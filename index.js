@@ -32,7 +32,14 @@ function randumb(...args) {
       theArr[i] = i;
     }
     const set = new NoDuplicates(theArr);
-    return function a() {
+    return function a(returnArr) {
+      if (returnArr) {
+        const arr = [];
+        for (let i = 0; i < theArr.length; i++) {
+          arr.push(set.get());
+        }
+        return arr;
+      }
       return set.get();
     };
   } else if (typeof theArgs[0] === 'number' && typeof theArgs[1] === 'number') {
@@ -49,12 +56,26 @@ function randumb(...args) {
       theArr[i] = i + smallest()[0];
     }
     const set = new NoDuplicates(theArr);
-    return function a() {
+    return function a(returnArr) {
+      if (returnArr) {
+        const arr = [];
+        for (let i = 0; i < theArr.length; i++) {
+          arr.push(set.get());
+        }
+        return arr;
+      }
       return set.get();
     };
   } else if (Array.isArray(theArgs[0])) {
     const set = new NoDuplicates(theArgs[0]);
-    return function a() {
+    return function a(returnArr) {
+      if (returnArr) {
+        const arr = [];
+        for (let i = 0; i < theArgs[0].length; i++) {
+          arr.push(set.get());
+        }
+        return arr;
+      }
       return set.get();
     };
   } else {

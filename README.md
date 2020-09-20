@@ -1,6 +1,7 @@
 # no-duplicates
 
-Get random numbers or random elements from an array without duplicates in JavaScript. Will reset when all elements in the array or all numbers in the range have been used.
+Get random numbers or random elements from an array without duplicates in JavaScript.
+Will return a function that will return a random number or random array element without repeating until all elements in the array or all numbers in the range have been used.
 A very useful function for game development and any other application that may require randomized sets.
 
 # Installation
@@ -33,6 +34,19 @@ between();
  * will return a random number between 5 and 15*
  * (including 5  & 15) without repeating until *
  * all numbers in the range have been used     *
+ ********************************************* */
+
+const returnArray = randumb(2, 10);
+returnArray(true);
+//[
+//  10, 2, 7, 5, 6,
+//   3, 8, 4, 9
+//]
+
+/* *********************************************
+ * Passing a truthy value as an argument will  *
+ * return all items or numbers in a randomized *
+ * array without repeats.                      *
  ********************************************* */
 ```
 
